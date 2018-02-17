@@ -19,6 +19,7 @@ def roots(path = os.popen('pwd').read().split('/')[len(os.popen('pwd').read().sp
 	if start + 1 != end:
 		print(spc[:-1] + '├─' + "\033[;1m" + files.replace('\n', '') + "\033[0;0m", end = '\n')
 	else:
+		spc = spc[:-2] + '  '
 		print(spc[:-1] + '└─' + "\033[;1m" + files.replace('\n', '') + "\033[0;0m", end = '\n')
 	for i in range(len(path)):
 		if os.path.isfile(path[i]) == True:
