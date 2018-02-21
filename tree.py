@@ -2,7 +2,6 @@ import os
 import sys
 from hashlib import md5
 def roots(path = os.popen('cd; pwd').read().split('\n')[0], space = '', start = 0, end = 1):
-	files = path
 	if path == '/':
 		if os.popen('whoami').read().split('\n')[0] == 'root':
 			files = ' /'
@@ -10,7 +9,7 @@ def roots(path = os.popen('cd; pwd').read().split('\n')[0], space = '', start = 
 			print('for run the function roots from root, run this scritp as a superuser')
 			exit()
 	else:
-		files = path.split('/')[len(os.popen('pwd').read().split('/')) - 1]
+		files = path.split('/')[len(path.split('/')) - 1]
 	os.chdir(path)
 	dir = []
 	path = []
