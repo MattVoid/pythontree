@@ -11,12 +11,12 @@ This project has been created to facilitate folder management
 * ### Roots ###
 		
 		import pythontree
-		Tree = Tree('*** you can choose the path to start ***')
+		Tree = pythontree.Tree('*** you can choose the path to start ***')
 		Tree.roots()
 		
 * ### Clean ###
 
 		import pythontree
-		Tree = Tree('*** you can choose the path to start ***')
+		Tree = pythontree.Tree('*** you can choose the path to start ***')
 		Tree.clean()
 		
