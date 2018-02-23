@@ -5,7 +5,7 @@ This project has been created to facilitate folder management
 * ### Installation ###
 
 		pip install pythontree
-		pip install pythontree #upgrade
+		pip install pythontree --upgrade #upgrade
 		
 
 * ### Roots ###
