@@ -11,7 +11,7 @@ This project has been created to facilitate folder management
 * ### Roots ###
 
 		Tree = Tree('*** you can choose the path to start ***')
-		Tree.root()
+		Tree.roots()
 		
 
 * ### Clean ###
