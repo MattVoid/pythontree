@@ -4,8 +4,8 @@ This project has been created to facilitate folder management
 
 * ### Installation ###
 
-		pip install pythontree
-		pip install pythontree --upgrade #upgrade
+		pip3 install pythontree
+		pip3 install pythontree --upgrade #upgrade
 		
 
 * ### Roots ###
