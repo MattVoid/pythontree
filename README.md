@@ -8,6 +8,12 @@ This project has been created to facilitate folder management
 		$ pip3 install pythontree
 		$ pip3 install pythontree --upgrade #upgrade
 		```
+	*wget
+		```
+		$ git clone https://github.com/MattVoid/pythontree.git
+		$ cd pythontree
+		$ python setup.py install
+		```
 * ### Roots ###
 	* roots
 		it's a grapich function, print a tree of the chosen path
