@@ -12,7 +12,7 @@ This project has been created to facilitate folder management
 		```
 		$ git clone https://github.com/MattVoid/pythontree.git
 		$ cd pythontree
-		$ python setup.py install
+		$ python3 setup.py install
 		```
 * ### Roots ###
 	* roots
