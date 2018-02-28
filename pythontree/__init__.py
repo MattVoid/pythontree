@@ -6,17 +6,19 @@ class Tree:
 	start = 0
 	end = 1
 	space = ''
-	# Clean().clean() array
+	# Clean().clean() and Clean.element() array
 	clear = []
 	delete = []
 	pwd = []
 	pwd2 = []
 	file = []
 	empty = []
-	# Roots().element() var/array
+	# Roots().element() var and array
 	x = 0
 	dirs = []
 	files = []
+	# element prova
+	clean = {}
 
 	def __init__(self, path = os.popen('cd; pwd').read().split('\n')[0]):
 		self.path = path
@@ -26,7 +28,7 @@ class Roots(Tree):
 	def __init__(self, path):
 		super().__init__(path)
 		self.path = path
-	# show all element in the path, files and directorys
+	# show all element in the path, files and folders
 	def element(self):
 		Tree.x = Tree.x + 1
 		os.chdir(self.path)
@@ -49,6 +51,8 @@ class Roots(Tree):
 				Tree.dirs = []
 				Tree.files = []
 	# graphic function, show the tree of the path
+	#def type(self):
+		
 	def roots(self):
 		if self.path == '/':
 			if os.popen('whoami').read().split('\n')[0] == 'root':
@@ -100,12 +104,11 @@ class Clean(Tree):
 	def __init__(self, path):
 		super().__init__(path)
 		self.path = path
-
+	# show empty folders and equal files
 	def element(self, show = 'off'):
 		if show != 'on' and show != 'off':
 			print('Arguments not found: the value of this arguments is "on" or "off"')
 			exit()
-		Tree.x = Tree.x + 1
 		os.chdir(self.path)
 		pathing = os.popen('pwd').read().split('\n')[0]
 		ls = os.popen('ls').read().split('\n')
@@ -114,9 +117,11 @@ class Clean(Tree):
 		else:
 			for i in range(len(ls)):
 				if os.path.isdir(ls[i]) == True:
-					Tree.dirs.append(ls[i])																		# dirs
+					Tree.dirs.append(ls[i])
+					Tree.x = Tree.x + 1																			# dirs
 					os.chdir(os.popen('cd "' + ls[i] + '"; pwd').read().split('\n')[0])
-					Clean(os.popen('pwd').read().replace('\n', '')).element()
+					Clean(os.popen('pwd').read().replace('\n', '')).element(show)
+					Tree.x = Tree.x - 1
 					os.chdir(pathing)
 				elif os.path.isfile('./' + ls[i]) == True:
 					if len(Tree.clear) != 0:
@@ -135,26 +140,25 @@ class Clean(Tree):
 					else:
 						Tree.clear.append(md5(open(ls[i], 'rb').read()).hexdigest())							# clear
 						Tree.files.append(os.popen('pwd').read().replace('\n', '') + '/' + ls[i])				# files
-		Tree.x = Tree.x - 1
-		try:
-			if show == 'off':
-				return Tree.empty, Tree.delete
-			elif show == 'on':
-				less = 1
-				for i in range(len(Tree.empty)):
-					print(Tree.empty[i] + "\033[1;31m" + ' is empty ' + "\033[0;0m")
-				for i in range(len(Tree.pwd)):
-					print(Tree.pwd[i - less] + "\033[1;31m" + ' is same to ' + "\033[0;0m" + Tree.pwd2[i - less])
-					Tree.pwd.remove(Tree.pwd[i - less])
-					Tree.pwd2.remove(Tree.pwd2[i - less])
-					less = less + 1
-		finally:
-			if Tree.x == 0:
-				# clear Clean().element() array
-				Tree.dirs = []
-				Tree.files = []
-				Tree.delete = []
-				Tree.pwd = []
-				Tree.pwd2 = []
-				Tree.clear = []
-				Tree.empty = []
+			less = 1
+			try:
+				if show == 'off':
+					return Tree.empty, Tree.files
+				elif show == 'on':
+					for i in range(len(Tree.empty)):
+						print(Tree.empty[i] + "\033[1;31m" + ' is empty ' + "\033[0;0m")
+					for i in range(len(Tree.pwd)):
+						print(Tree.pwd[i - less] + "\033[1;31m" + ' is same to ' + "\033[0;0m" + Tree.pwd2[i - less])
+						Tree.pwd.remove(Tree.pwd[i - less])
+						Tree.pwd2.remove(Tree.pwd2[i - less])
+						less = less + 1
+			finally:
+				if Tree.x == 0:
+					# clear Clean().element() array
+					Tree.dirs = []
+					Tree.files = []
+					Tree.delete = []
+					Tree.pwd = []
+					Tree.pwd2 = []
+					Tree.clear = []
+					Tree.empty = []
