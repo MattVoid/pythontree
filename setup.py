@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
 	name = 'pythontree',
-	version = '1.3.3',
+	version = '1.4',
 	description = 'facilitate folder management',
 	license = "Apache-2.0",
 	author = 'MattVoid',
