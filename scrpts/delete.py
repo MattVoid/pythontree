@@ -9,8 +9,8 @@ for i in range(len(check[0])):
 	print(str(x) + ' - ' + check[0][i] + "\033[1;31m" + ' is empty!' + "\033[0;0m")
 	dir = dir + ''.join(str(x - 1))
 	x = x + 1
-for i in range(len(check[2])):
-	print(str(x) + ' - ' + check[2][i] + "\033[1;31m" + ' is equal to ' + "\033[0;0m" + check[3][i])
+for i in range(len(check[1])):
+	print(str(x) + ' - ' + check[1][i] + "\033[1;31m" + ' is equal to ' + "\033[0;0m" + check[2][i])
 	file = file + ''.join(str(x - 1))
 	x = x + 1
 print('what do you want to delete?')
@@ -28,17 +28,17 @@ if choose == '1' and check[0]:
 	pythontree.Clean(path).delete('dirs')
 	for i in range(len(check[0])):
 		print(check[0][i] + "\033[1;31m" + ' was deleted!' + "\033[0;0m")
-elif choose == '2' and check[2]:
+elif choose == '2' and check[1]:
 	pythontree.Clean(path).delete('files')
-	for i in range(len(check[2])):
-		print(check[2][i] + "\033[1;31m" + ' was deleted!' + "\033[0;0m")
-elif choose == '3' and check[0] and check[2]:
+	for i in range(len(check[1])):
+		print(check[1][i] + "\033[1;31m" + ' was deleted!' + "\033[0;0m")
+elif choose == '3' and check[0] and check[1]:
 	pythontree.Clean(path).delete('both')
 	for i in range(len(check[0])):
 		print(check[0][i] + "\033[1;31m" + ' was deleted!' + "\033[0;0m")
 	for i in range(len(check[2])):
 		print(check[2][i] + "\033[1;31m" + ' was deleted!' + "\033[0;0m")
-elif choose == '4' and check[0] or check[2]:
+elif choose == '4' and check[0] or check[1]:
 	delete = input('choose the files or folders to delete: ').replace(' ', '')
 	if ';' in delete:
 		delete = delete.split(';')
@@ -59,8 +59,8 @@ elif choose == '4' and check[0] or check[2]:
 					os.rmdir(check[0][int(delete[x])])
 					print(check[0][int(delete[x])] + "\033[1;31m" + ' was deleted!' + "\033[0;0m")
 				elif str(int(delete[x])) in file:
-					os.remove(check[2][int(delete[x])])
-					print(check[2][int(delete[x])] + "\033[1;31m" + ' was deleted!' + "\033[0;0m")
+					os.remove(check[1][int(delete[x])])
+					print(check[1][int(delete[x])] + "\033[1;31m" + ' was deleted!' + "\033[0;0m")
 				else:
 					print(delete[x] + ' - ' + '\033[1;93m' + 'Element not found!' + "\033[0;0m")
 	else:
@@ -71,8 +71,8 @@ elif choose == '4' and check[0] or check[2]:
 					os.rmdir(check[0][i - 1])
 					print(check[0][i - 1] + "\033[1;31m" + ' was deleted!' + "\033[0;0m")
 				elif str(i - 1) in file:
-					os.remove(check[2][i - 1])
-					print(check[2][i - 1] + "\033[1;31m" + ' was deleted!' + "\033[0;0m")
+					os.remove(check[1][i - 1])
+					print(check[1][i - 1] + "\033[1;31m" + ' was deleted!' + "\033[0;0m")
 				else:
 					print(delete[i] + ' - ' + '\033[1;93m' + 'Element not found!' + "\033[0;0m")
 		else:
@@ -80,8 +80,8 @@ elif choose == '4' and check[0] or check[2]:
 				os.rmdir(check[0][int(delete) - 1])
 				print(check[0][int(delete) - 1] + "\033[1;31m" + ' was deleted!' + "\033[0;0m")
 			elif str(int(delete) - 1) in file:
-				os.remove(check[2][int(delete) - 1])
-				print(check[2][int(delete) - 1] + "\033[1;31m" + ' was deleted!' + "\033[0;0m")
+				os.remove(check[1][int(delete) - 1])
+				print(check[1][int(delete) - 1] + "\033[1;31m" + ' was deleted!' + "\033[0;0m")
 			else:
 				print(delete + ' - ' + '\033[1;93m' + 'Element not found!' + "\033[0;0m")
 elif choose == '5':
@@ -89,4 +89,4 @@ elif choose == '5':
 	exit()
 else:
 	print('\033[1;93m' + 'Choice not available!' + "\033[0;0m")
-	exit()
+	exit()'''
