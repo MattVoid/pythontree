@@ -16,7 +16,7 @@ This project has been created to facilitate folder management
 		```
 * ### Roots ###
 	* roots
-		* it's a grapich function, print a tree of the chosen path
+		it's a grapich function, print a tree of the chosen path
 		```
 		import pythontree
 		Roots = pythontree.Roots('*** you can choose the path to start ***')
@@ -33,7 +33,7 @@ This project has been created to facilitate folder management
 		```
 * ### Clean ###
   	* element
-		* return an array with empty folders or equal files
+		return an array with empty folders or equal files
 		```
 		import pythontree
 		Clean = pythontree.Clean('*** you can choose the path to start ***')
@@ -42,21 +42,21 @@ This project has been created to facilitate folder management
 		```
 	* delete
 		* files
-			* delete equal files starting from your chosen path
+			delete equal files starting from your chosen path
 			```
 			import pythontree
 			Clean = pythontree.Clean('*** you can choose the path to start ***')
 			Clean.delete('files')
 			```
 		* dirs
-			* delete empty folders starting from your chosen path
+			delete empty folders starting from your chosen path
 			```
 			import pythontree
 			Clean = pythontree.Clean('*** you can choose the path to start ***')
 			Clean.delete('dirs')
 			```
 		* both
-			* delete empty folders and equal files starting from your chosen path
+			delete empty folders and equal files starting from your chosen path
 			```
 			import pythontree
 			Clean = pythontree.Clean('*** you can choose the path to start ***')
