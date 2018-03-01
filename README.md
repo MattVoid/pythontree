@@ -37,8 +37,9 @@ This project has been created to facilitate folder management
 		```
 		import pythontree
 		Clean = pythontree.Clean('*** you can choose the path to start ***')
-		Clean.element()[0] #empty folders
-		Clean.element()[1] #equals files
+		Clean.element()[0] #return empty folders
+		Clean.element()[1] #return equal files to the first
+		Clean.element()[2] #return first file path
 		```
 	* delete
 		* files
