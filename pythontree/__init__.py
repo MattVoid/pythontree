@@ -137,7 +137,7 @@ class Clean(Tree):
 						Tree.files.append(os.popen('pwd').read().replace('\n', '') + '/' + ls[i])				# files
 			less = 1
 			try:
-				return Tree.empty, Tree.files, Tree.pwd, Tree.pwd2
+				return Tree.empty, Tree.pwd, Tree.pwd2
 			finally:
 				if Tree.x == 0:
 					# clear Clean().element() array
