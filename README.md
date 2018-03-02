@@ -1,5 +1,9 @@
 # Pythontree
 
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg)]()
+[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/MattVoid/pythontree/blob/master/LICENSE.md)
+	
+
 This project has been created to facilitate folder management
 
 * ### Installation ###
