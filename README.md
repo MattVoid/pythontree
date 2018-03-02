@@ -1,10 +1,18 @@
 # Pythontree
 
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg)]()
-[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/MattVoid/pythontree/blob/master/LICENSE.md)
+![PyPI - Python Version](https://img.shields.io/badge/Python-<=_3.4-blue.svg)
+[![Hex.pm](https://img.shields.io/badge/license-Apache_2.0-blue.svg)](https://github.com/MattVoid/pythontree/blob/master/LICENSE.md)
+[![PyPI - Pypi.org Library](https://img.shields.io/badge/pypi-pythontree-brightgreen.svg)](https://pypi.org/search/?q=pythontree)
+![Project Version](https://img.shields.io/badge/version-1.4-lightgrey.svg)
 	
 
 This project has been created to facilitate folder management
+
+* ### OS Supported ###
+
+![Linux Support](https://img.shields.io/badge/Linux-Support-brightgreen.svg)
+![macOS Support](https://img.shields.io/badge/macOS-Support-brightgreen.svg) 
+![Windows Not_Supported](https://img.shields.io/badge/Windows-Not_Supported-red.svg)
 
 * ### Installation ###
 	* pip
