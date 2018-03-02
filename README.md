@@ -15,7 +15,7 @@ This project has been created to facilitate folder management
 		$ python3 setup.py install
 		```
 * ### Roots ###
-	* roots
+	* roots </br>
 		it's a grapich function, print a tree of the chosen path
 		```
 		import pythontree
@@ -23,7 +23,7 @@ This project has been created to facilitate folder management
 		Roots.roots()
 		```
 		![Alt text](https://raw.githubusercontent.com/MattVoid/pythontree/master/img/roots.jpg?raw=true)
-	* element
+	* element </br>
 		return an array with files or folders starting from your chosen path
 		```
 		import pythontree
@@ -32,7 +32,7 @@ This project has been created to facilitate folder management
 		Roots.element()[1] #return folders
 		```
 * ### Clean ###
-  	* element
+  	* element </br>
 		return an array with empty folders or equal files
 		```
 		import pythontree
@@ -42,21 +42,21 @@ This project has been created to facilitate folder management
 		Clean.element()[2] #return first file path
 		```
 	* delete
-		* files
+		* files </br>
 			delete equal files starting from your chosen path
 			```
 			import pythontree
 			Clean = pythontree.Clean('*** you can choose the path to start ***')
 			Clean.delete('files')
 			```
-		* dirs
+		* dirs </br>
 			delete empty folders starting from your chosen path
 			```
 			import pythontree
 			Clean = pythontree.Clean('*** you can choose the path to start ***')
 			Clean.delete('dirs')
 			```
-		* both
+		* both </br>
 			delete empty folders and equal files starting from your chosen path
 			```
 			import pythontree
