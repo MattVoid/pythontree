@@ -3,7 +3,7 @@
 ![PyPI - Python Version](https://img.shields.io/badge/Python-<=_3.4-blue.svg)
 [![Hex.pm](https://img.shields.io/badge/license-Apache_2.0-blue.svg)](https://github.com/MattVoid/pythontree/blob/master/LICENSE.md)
 [![PyPI - Pypi.org Library](https://img.shields.io/badge/pypi-pythontree-brightgreen.svg)](https://pypi.org/search/?q=pythontree)
-![Project Version](https://img.shields.io/badge/version-1.4-lightgrey.svg)
+![Project Version](https://img.shields.io/badge/version-1.4.5-lightgrey.svg)
 	
 
 This project has been created to facilitate folder management
@@ -42,6 +42,13 @@ This project has been created to facilitate folder management
 		Roots = pythontree.Roots('*** you can choose the path to start ***')
 		Roots.element()[0] #return files
 		Roots.element()[1] #return folders
+		```
+	* type </br>
+		return an array with files with an extension of your choice starting from your path
+		```
+		import pythontree
+		Roots = pythontree.Roots('*** you can choose the path from start ***')
+		Roots.type('*** insert extension to return ***')
 		```
 * ### Clean ###
   	* element </br>
