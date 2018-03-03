@@ -17,6 +17,8 @@ class Tree:
 	x = 0
 	dirs = []
 	files = []
+	# Roots().type()
+	type = []
 
 	def __init__(self, path = os.popen('cd; pwd').read().split('\n')[0]):
 		self.path = path
@@ -49,7 +51,30 @@ class Roots(Tree):
 				Tree.dirs = []
 				Tree.files = []
 	# graphic function, show the tree of the path
-	#def type(self):
+	def type(self, type):
+		type = type.replace('.', '')
+		os.chdir(self.path)
+		pathing = os.popen('pwd').read().split('\n')[0]
+		ls = os.popen('ls').read().split('\n')
+		for i in range(len(ls)):
+			if os.path.isdir(ls[i]) == True:
+				Tree.x = Tree.x + 1
+				os.chdir(os.popen('cd "' + ls[i] + '"; pwd').read().split('\n')[0])
+				Tree.x = Tree.x - 1
+				Roots(os.popen('pwd').read().replace('\n', '')).type(type)
+				os.chdir(pathing)
+			elif os.path.isfile('./' + ls[i]) == True:
+				if ls[i].split('.')[len(ls[i].split('.')) - 1] == type:
+					Tree.type.append(ls[i])
+		return Tree.type
+		'''try:
+			return Tree.type
+		finally:
+			if Tree.x == 0:
+				# clear Roots().element() array
+				Tree.type = []'''
+	# graphic function, show the tree of the path
+
 		
 	def roots(self):
 		if self.path == '/':
