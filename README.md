@@ -10,9 +10,9 @@ This project has been created to facilitate folder management
 
 * ### OS Supported ###
 
-![Linux Support](https://img.shields.io/badge/Linux-Support-brightgreen.svg)
-![macOS Support](https://img.shields.io/badge/macOS-Support-brightgreen.svg) 
-![Windows Not_Supported](https://img.shields.io/badge/Windows-Not_Supported-red.svg)
+	![Linux Support](https://img.shields.io/badge/Linux-Support-brightgreen.svg)
+	![macOS Support](https://img.shields.io/badge/macOS-Support-brightgreen.svg) 
+	![Windows Not_Supported](https://img.shields.io/badge/Windows-Not_Supported-red.svg)
 
 * ### Installation ###
 	* pip
