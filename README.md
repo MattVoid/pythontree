@@ -20,7 +20,7 @@ This project has been created to facilitate folder management
 		$ pip3 install pythontree
 		$ pip3 install pythontree --upgrade #upgrade
 		```
-	* wget
+	* git
 		```
 		$ git clone https://github.com/MattVoid/pythontree.git
 		$ cd pythontree
