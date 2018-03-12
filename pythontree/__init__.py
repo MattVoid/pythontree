@@ -1,5 +1,4 @@
 import os
-import sys
 from hashlib import md5
 class Tree:
 	clean = {'empty' : {'name' : [], 'path' : []}, 'duplicate' : {'original' : {'path' : [], 'name' : []}, 'name' : [], 'path' : []}}
