@@ -85,7 +85,7 @@ This project has been created to facilitate folder management
 		```
 		```
 		>>> import pythontree
-		>>> Clean = pythontree.Clean('*** you can choose the path to start ***')
+		>>> Clean = pythontree.Clean('/home') # you can choose the path to start
 		>>> print(Clean.element()['empty']['path'])
 		['/home/Desktop/project']
 		>>> Clean.element()['empty']['name']
