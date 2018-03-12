@@ -3,7 +3,7 @@
 ![PyPI - Python Version](https://img.shields.io/badge/Python->=_3.4-blue.svg)
 [![Hex.pm](https://img.shields.io/badge/license-Apache_2.0-blue.svg)](https://github.com/MattVoid/pythontree/blob/master/LICENSE.md)
 [![PyPI - Pypi.org Library](https://img.shields.io/badge/pypi-pythontree-brightgreen.svg)](https://pypi.org/search/?q=pythontree)
-![Project Version](https://img.shields.io/badge/version-1.4.5-lightgrey.svg)
+![Project Version](https://img.shields.io/badge/version-1.5-lightgrey.svg)
 	
 
 This project has been created to facilitate folder management
@@ -30,9 +30,9 @@ This project has been created to facilitate folder management
 	* roots </br>
 		it's a grapich function, print a tree of the chosen path
 		```
-		import pythontree
-		Roots = pythontree.Roots('*** you can choose the path to start ***')
-		Roots.roots()
+		>>> import pythontree
+		>>> Roots = pythontree.Roots('*** you can choose the path to start ***')
+		>>> Roots.roots()
 		```
 		![Alt text](https://raw.githubusercontent.com/MattVoid/pythontree/master/img/roots.jpg?raw=true)
 	* element </br>
