@@ -1,6 +1,6 @@
 # Pythontree
 
-![PyPI - Python Version](https://img.shields.io/badge/Python-<=_3.4-blue.svg)
+![PyPI - Python Version](https://img.shields.io/badge/Python->=_3.4-blue.svg)
 [![Hex.pm](https://img.shields.io/badge/license-Apache_2.0-blue.svg)](https://github.com/MattVoid/pythontree/blob/master/LICENSE.md)
 [![PyPI - Pypi.org Library](https://img.shields.io/badge/pypi-pythontree-brightgreen.svg)](https://pypi.org/search/?q=pythontree)
 ![Project Version](https://img.shields.io/badge/version-1.4.5-lightgrey.svg)
@@ -38,10 +38,26 @@ This project has been created to facilitate folder management
 	* element </br>
 		return an array with files or folders starting from your chosen path
 		```
-		import pythontree
-		Roots = pythontree.Roots('*** you can choose the path to start ***')
-		Roots.element()[0] #return files
-		Roots.element()[1] #return folders
+		└─home
+		  └─Desktop
+		    ├─document
+		    │ └─setup.py
+		    ├─python
+		    │ └─try.py
+		    └─ruby
+		      └─try.rb
+		```
+		```
+		>>> import pythontree
+		>>> Roots = pythontree.Roots('/home') # you can choose the path to start
+		>>> print(Roots.element()['file']['path'])
+		['/home/Desktop/document/setup.py', '/home/Desktop/python/try.py', '/home/Desktop/ruby/try.rb']
+		>>> print(Roots.element()['file']['name'])
+		['setup.py', 'try.py', 'try.rb']
+		>>> print(Roots.element()['dir']['path'])
+		['/home/Desktop', '/home/Desktop/document', '/home/Desktop/python', '/home/Desktop/ruby']
+		>>> print(Roots.element()['dir']['name'])
+		['Desktop', 'document', 'python', 'ruby']
 		```
 	* type </br>
 		return an array with files with an extension of your choice starting from your path
@@ -54,31 +70,54 @@ This project has been created to facilitate folder management
   	* element </br>
 		return an array with empty folders or equal files
 		```
-		import pythontree
-		Clean = pythontree.Clean('*** you can choose the path to start ***')
-		Clean.element()[0] #return empty folders
-		Clean.element()[1] #return equal files to the first
-		Clean.element()[2] #return first file path
+		└─home
+		  └─Desktop
+		    ├─document
+		    │ └─setup.py
+		    ├─python
+		    │ ├─try.py
+		    │ ├─try(copy).py
+		    │ ├─try(copy 2).py
+		    │ └─pythontree.py
+		    ├─ruby
+		    │ └─try.rb
+		    └─project
+		```
+		```
+		>>> import pythontree
+		>>> Clean = pythontree.Clean('*** you can choose the path to start ***')
+		>>> print(Clean.element()['empty']['path'])
+		['/home/Desktop/project']
+		>>> Clean.element()['empty']['name']
+		['project']
+		>>> print(Clean.element()['duplicate']['path'])
+		['/home/Desktop/python/try(copy).py', '/home/Desktop/python/try(copy 2).py']
+		>>> print(Clean.element()['duplicate']['name'])
+		['try(copy).py','try(copy 2).py']
+		>>> print(Clean.element()['duplicate']['original']['path'])
+		['/home/Desktop/python/try.py','/home/Desktop/python/try.py']
+		>>> print(Clean.element()['duplicate']['original']['name'])
+		['try.py','try.py']
 		```
 	* delete
 		* files </br>
 			delete equal files starting from your chosen path
 			```
-			import pythontree
-			Clean = pythontree.Clean('*** you can choose the path to start ***')
-			Clean.delete('files')
+			>>> import pythontree
+			>>> Clean = pythontree.Clean('*** you can choose the path to start ***')
+			>>> Clean.delete('files')
 			```
 		* dirs </br>
 			delete empty folders starting from your chosen path
 			```
-			import pythontree
-			Clean = pythontree.Clean('*** you can choose the path to start ***')
-			Clean.delete('dirs')
+			>>> import pythontree
+			>>> Clean = pythontree.Clean('*** you can choose the path to start ***')
+			>>> Clean.delete('dirs')
 			```
 		* both </br>
 			delete empty folders and equal files starting from your chosen path
 			```
-			import pythontree
-			Clean = pythontree.Clean('*** you can choose the path to start ***')
-			Clean.delete('both')
+			>>> import pythontree
+			>>> Clean = pythontree.Clean('*** you can choose the path to start ***')
+			>>> Clean.delete('both')
 			```
