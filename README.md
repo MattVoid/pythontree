@@ -62,9 +62,9 @@ This project has been created to facilitate folder management
 	* type </br>
 		return an array with files with an extension of your choice starting from your path
 		```
-		import pythontree
-		Roots = pythontree.Roots('*** you can choose the path from start ***')
-		Roots.type('*** insert extension to return ***')
+		>>> import pythontree
+		>>> Roots = pythontree.Roots('*** you can choose the path from start ***')
+		>>> Roots.type('*** insert extension to return ***')
 		```
 * ### Clean ###
   	* element </br>
