@@ -3,7 +3,7 @@
 [![PyPI - Python Version](https://img.shields.io/badge/Python->=_3.4-blue.svg)](https://www.python.org/)
 [![Hex.pm](https://img.shields.io/badge/license-Apache_2.0-blue.svg)](https://github.com/MattVoid/pythontree/blob/master/LICENSE.md)
 [![PyPI - Pypi.org Library](https://img.shields.io/badge/pypi-pythontree-brightgreen.svg)](https://pypi.org/search/?q=pythontree)
-![Project Version](https://img.shields.io/badge/version-1.5-lightgrey.svg)
+![Project Version](https://img.shields.io/badge/version-1.5.3-lightgrey.svg)
 	
 
 This project has been created to facilitate folder management
@@ -64,8 +64,10 @@ This project has been created to facilitate folder management
 		```
 		>>> import pythontree
 		>>> Roots = pythontree.Roots('/home') # you can choose the path to start
-		>>> print(Roots.type('rb') # you can choose the extension to return)
+		>>> print(Roots.type('rb')['name']) # you can choose the extension to return
 		['try.rb']
+		>>> print(Roots.type('rb')['name'])
+		['/home/Desktop/ruby/try.rb']
 		```
 * ### Clean ###
   	* element </br>
