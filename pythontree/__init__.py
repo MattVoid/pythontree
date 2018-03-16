@@ -3,6 +3,7 @@ from hashlib import md5
 class Tree:
 	clean = {'empty' : {'name' : [], 'path' : []}, 'duplicate' : {'original' : {'path' : [], 'name' : []}, 'name' : [], 'path' : []}}
 	roots = {'dir' : {'name' : [], 'path' : []}, 'file' : {'name' : [], 'path' : []}}
+	type = {'path' : [], 'name': []}
 	# Roots().roots() var
 	start = 0
 	end = 1
@@ -17,7 +18,6 @@ class Tree:
 	# Roots().element() var and array
 	x = 0
 	# Roots().type()
-	type = []
 
 	def __init__(self, path = os.popen('cd; pwd').read().split('\n')[0]):
 		self.path = path
@@ -63,13 +63,14 @@ class Roots(Tree):
 				os.chdir(pathing)
 			elif os.path.isfile('./' + ls[i]) == True:
 				if ls[i].split('.')[len(ls[i].split('.')) - 1] == type:
-					Tree.type.append(ls[i])
+					Tree.type['name'].append(ls[i])
+					Tree.type['path'].append(os.popen('pwd').read().replace('\n', '') + '/' + ls[i])
 		Tree.x = Tree.x - 1
 		try:
 			return Tree.type
 		finally:
 			if Tree.x == 0:
-				Tree.type = []
+				Tree.type = {}
 	# graphic function, show the tree of the path
 	def roots(self):
 		if self.path == '/':
@@ -146,17 +147,17 @@ class Clean(Tree):
 								Tree.clean['duplicate']['name'].append(Tree.files[x].split('/')[-1])
 								Tree.clean['duplicate']['original']['path'].append(os.popen('pwd').read().replace('\n', '') + '/' + ls[i])
 								Tree.clean['duplicate']['original']['name'].append(ls[i])
-								Tree.delete.append(md5(open(ls[i], 'rb').read()).hexdigest())                   # delete
+								Tree.delete.append(md5(open(ls[i], 'rb').read()).hexdigest())
 						if len(Tree.delete) != 0:
 							if md5(open(ls[i], 'rb').read()).hexdigest() != Tree.delete[len(Tree.delete) - 1]:
-								Tree.clear.append(md5(open(ls[i], 'rb').read()).hexdigest())                    # clear
-								Tree.files.append(os.popen('pwd').read().replace('\n', '') + '/' + ls[i])       # files
+								Tree.clear.append(md5(open(ls[i], 'rb').read()).hexdigest())
+								Tree.files.append(os.popen('pwd').read().replace('\n', '') + '/' + ls[i])
 						elif len(Tree.delete) == 0:
-							Tree.clear.append(md5(open(ls[i], 'rb').read()).hexdigest())                        # clear
-							Tree.files.append(os.popen('pwd').read().replace('\n', '') + '/' + ls[i])           # files
+							Tree.clear.append(md5(open(ls[i], 'rb').read()).hexdigest())
+							Tree.files.append(os.popen('pwd').read().replace('\n', '') + '/' + ls[i])
 					else:
-						Tree.clear.append(md5(open(ls[i], 'rb').read()).hexdigest())                            # clear
-						Tree.files.append(os.popen('pwd').read().replace('\n', '') + '/' + ls[i])               # files
+						Tree.clear.append(md5(open(ls[i], 'rb').read()).hexdigest())
+						Tree.files.append(os.popen('pwd').read().replace('\n', '') + '/' + ls[i])
 			less = 1
 			try:
 				return Tree.clean
@@ -181,7 +182,7 @@ class Clean(Tree):
 		else:
 			for i in range(len(ls)):
 				if os.path.isdir(ls[i]) == True:
-					Tree.dirs.append(ls[i])                                                                     # dirs
+					Tree.dirs.append(ls[i])
 					os.chdir(os.popen('cd "' + ls[i] + '"; pwd').read().split('\n')[0])
 					Tree.x = Tree.x + 1
 					Clean(os.popen('pwd').read().replace('\n', '')).delete(delete)
@@ -190,16 +191,16 @@ class Clean(Tree):
 				elif os.path.isfile('./' + ls[i]) == True:
 					if len(Tree.clear) != 0:
 						for x in range(len(Tree.clear)):
-							if md5(open(ls[i], 'rb').read()).hexdigest() == Tree.clear[x]:                      # pwd2
+							if md5(open(ls[i], 'rb').read()).hexdigest() == Tree.clear[x]:
 								Tree.pwd.append(os.popen('pwd').read().replace('\n', '') + '/' + ls[i]) 
-								Tree.delete.append(md5(open(ls[i], 'rb').read()).hexdigest())                   # delete
+								Tree.delete.append(md5(open(ls[i], 'rb').read()).hexdigest())
 						if len(Tree.delete) != 0:
 							if md5(open(ls[i], 'rb').read()).hexdigest() != Tree.delete[len(Tree.delete) - 1]:
-								Tree.clear.append(md5(open(ls[i], 'rb').read()).hexdigest())                    # clear
+								Tree.clear.append(md5(open(ls[i], 'rb').read()).hexdigest())
 						elif len(Tree.delete) == 0:
-							Tree.clear.append(md5(open(ls[i], 'rb').read()).hexdigest())                        # clear
+							Tree.clear.append(md5(open(ls[i], 'rb').read()).hexdigest())
 					else:
-						Tree.clear.append(md5(open(ls[i], 'rb').read()).hexdigest())                            # clear
+						Tree.clear.append(md5(open(ls[i], 'rb').read()).hexdigest())
 			if Tree.x == 0:
 				for i in range(len(Tree.empty)):
 					if delete == 'both' or delete == 'dirs':
