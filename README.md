@@ -66,7 +66,7 @@ This project has been created to facilitate folder management
 		>>> Roots = pythontree.Roots('/home') # you can choose the path to start
 		>>> print(Roots.type('rb')['name']) # you can choose the extension to return
 		['try.rb']
-		>>> print(Roots.type('rb')['name'])
+		>>> print(Roots.type('rb')['path'])
 		['/home/Desktop/ruby/try.rb']
 		```
 * ### Clean ###
