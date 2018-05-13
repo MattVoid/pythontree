@@ -3,7 +3,7 @@
 [![PyPI - Python Version](https://img.shields.io/badge/Python->=_3.4-blue.svg)](https://www.python.org/)
 [![Hex.pm](https://img.shields.io/badge/license-Apache_2.0-blue.svg)](https://github.com/MattVoid/pythontree/blob/master/LICENSE.md)
 [![PyPI - Pypi.org Library](https://img.shields.io/badge/pypi-pythontree-brightgreen.svg)](https://pypi.org/search/?q=pythontree)
-![Project Version](https://img.shields.io/badge/version-1.5.3-lightgrey.svg)
+![Project Version](https://img.shields.io/badge/version-1.5.5-lightgrey.svg)
 	
 
 This project has been created to facilitate folder management
