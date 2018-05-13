@@ -70,12 +70,12 @@ class Roots(Tree):
 			return Tree.type
 		finally:
 			if Tree.x == 0:
-				Tree.type = {}
+				type = {'path' : [], 'name': []}
 	# graphic function, show the tree of the path
 	def roots(self):
 		if self.path == '/':
 			if os.popen('whoami').read().split('\n')[0] == 'root':
-				files = ' /'
+				files = '/'
 			else:
 				print('for run the function roots from root, run this scritp as a superuser')
 				exit()
@@ -143,10 +143,11 @@ class Clean(Tree):
 					if len(Tree.clear) != 0:
 						for x in range(len(Tree.clear)):
 							if md5(open(ls[i], 'rb').read()).hexdigest() == Tree.clear[x]:
-								Tree.clean['duplicate']['path'].append(Tree.files[x])
-								Tree.clean['duplicate']['name'].append(Tree.files[x].split('/')[-1])
-								Tree.clean['duplicate']['original']['path'].append(os.popen('pwd').read().replace('\n', '') + '/' + ls[i])
-								Tree.clean['duplicate']['original']['name'].append(ls[i])
+								if len(Tree.clean['duplicate']['original']['path']) == 0 and len(Tree.clean['duplicate']['original']['name']) == 0:
+									Tree.clean['duplicate']['original']['path'].append(Tree.files[x])
+									Tree.clean['duplicate']['original']['name'].append(Tree.files[x].split('/')[-1])
+								Tree.clean['duplicate']['path'].append(os.popen('pwd').read().replace('\n', '') + '/' + ls[i])
+								Tree.clean['duplicate']['name'].append(ls[i])
 								Tree.delete.append(md5(open(ls[i], 'rb').read()).hexdigest())
 						if len(Tree.delete) != 0:
 							if md5(open(ls[i], 'rb').read()).hexdigest() != Tree.delete[len(Tree.delete) - 1]:
@@ -168,7 +169,7 @@ class Clean(Tree):
 					Tree.files = [] #files
 					Tree.delete = [] #delete
 					Tree.clear = [] #clear
-					Tree.clean = {}
+					clean = {'empty' : {'name' : [], 'path' : []}, 'duplicate' : {'original' : {'path' : [], 'name' : []}, 'name' : [], 'path' : []}}
 	# delete empty folders and equal files
 	def delete(self, delete = 'both'):
 		if delete != 'dirs' and delete != 'files' and delete != 'both':
