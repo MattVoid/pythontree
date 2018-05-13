@@ -97,7 +97,7 @@ This project has been created to facilitate folder management
 		['/home/Desktop/python/try(copy).py', '/home/Desktop/python/try(copy 2).py']
 		>>> print(Clean.element()['duplicate']['name'])
 		['try(copy).py','try(copy 2).py']
-		>>> print(Clean.element()['duplicate']['original']['path'])
+		>>> print(Clean.element()['duplicate']['original']['path']) #original returns the reference file
 		['/home/Desktop/python/try.py','/home/Desktop/python/try.py']
 		>>> print(Clean.element()['duplicate']['original']['name'])
 		['try.py','try.py']
