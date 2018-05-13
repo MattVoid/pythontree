@@ -17,8 +17,8 @@ This project has been created to facilitate folder management
 * ### Installation ###
 	* pip
 		```
-		$ pip3 install pythontree
-		$ pip3 install pythontree --upgrade
+		# pip3 install pythontree
+		# pip3 install pythontree --upgrade
 		```
 	* git
 		```
