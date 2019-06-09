@@ -1,17 +1,92 @@
+# Element #
+The element class is use to manage easier the file or directory from pythontree class
+```
+└─home
+  └─Desktop
+    ├─document
+    │ └─setup.py
+    ├─python
+    │ └─try.py
+    └─ruby
+      └─try.rb
+```
+```
+>>> import Element
+>>> element = Element("home/Desktop/document/setup.py")
+```
+* attributes
+	* path </br>
+		in the "path" attribute there is the file or directory path
+		```
+		>>> element.path
+		'home/Desktop/document/setup.py'
+		```
+	* name </br>
+		in the "name" attribute there is the file or directory name
+		```
+		>>> element.name
+		'setup.py'
+		```
+	* type </br>
+		in the "type" attribute there is the file or directory type
+		```
+		>>> element.type
+		'.py'
+		```
+	* is_file </br>
+		in the "is_file" attribute there is a bool True value if is file if not False
+		```
+		>>> element.is_file
+		True
+		```
+	* is_dir </br>
+		in the "is_dir" attribute there is a bool True value True if is dir if not False
+		```
+		>>> element.is_file
+		False
+		```
+* classes
+	* is_empty </br>
+		the "is_empty" class return a bool True value if the file or directory is empty if not False
+		```
+		>>> element.is_empty()
+		True
+		```
+	* md5 </br>
+		the "md5" class return the md5 of file and return False if element is directory
+		```
+		>>> element.md5()
+		'd41d8cd98f00b204e9800998ecf8427e'
+		```
+	* delete </br>
+		the "delete" class delete file or directory
+		```
+		>>> element.delete()
+		```
+		```
+		└─home
+		  └─Desktop
+		    ├─document
+		    ├─python
+		    │ └─try.py
+		    └─ruby
+		      └─try.rb
+		```
+
 # Pythontree
 
 [![PyPI - Python Version](https://img.shields.io/badge/Python->=_3.4-blue.svg)](https://www.python.org/)
 [![Hex.pm](https://img.shields.io/badge/license-Apache_2.0-blue.svg)](https://github.com/MattVoid/pythontree/blob/master/LICENSE.md)
 [![PyPI - Pypi.org Library](https://img.shields.io/badge/pypi-pythontree-brightgreen.svg)](https://pypi.org/search/?q=pythontree)
 ![Project Version](https://img.shields.io/badge/version-1.5.5-lightgrey.svg)
-	
+
 
 This project has been created to facilitate folder management
 
 * ### OS Supported ###
 
 	![Linux Support](https://img.shields.io/badge/Linux-Support-brightgreen.svg)
-	![macOS Support](https://img.shields.io/badge/macOS-Support-brightgreen.svg) 
+	![macOS Support](https://img.shields.io/badge/macOS-Support-brightgreen.svg)
 	![Windows Not_Supported](https://img.shields.io/badge/Windows-Not_Supported-red.svg)
 
 * ### Installation ###
@@ -50,7 +125,7 @@ This project has been created to facilitate folder management
 		```
 		>>> import pythontree
 		>>> Roots = pythontree.Roots('/home') # you can choose the path to start
-		>>> print(Roots.element()['file']['path'])
+		>>> print(Roots.element())
 		['/home/Desktop/document/setup.py', '/home/Desktop/python/try.py', '/home/Desktop/ruby/try.rb']
 		>>> print(Roots.element()['file']['name'])
 		['setup.py', 'try.py', 'try.rb']
